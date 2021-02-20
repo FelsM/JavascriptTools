@@ -1,0 +1,12 @@
+-const navLinks = ['Home', 'Services', 'Contacts', 'Testimonials', 'Maps'];
+nav
+	.container
+		.navWrap
+			ul
+				-for(let i =0; i< navLinks.length; i++){
+					li
+						a(href=navLinks[i].adress)=navLinks[i].text
+				-}
+			.searchBlock
+				input(type="text")
+				button search

@@ -1,0 +1,13 @@
+- const contentObjExample = {serviceImgPath: 'img/1.jpg', serivceName: 'Name', serviceDescription:'Description'};
+mixin service(contentObj)
+	div.serviceItem
+		.imgWrap
+			img(src=contentObj.serviceImgPath)
+		h4=contentObj.serivceName
+		p=contentObj.serviceDescription
+
+mixin services(services)
+	div.services
+		-for(let i = 0; i < services.length; i++){
+			+service(services[i])
+		-}

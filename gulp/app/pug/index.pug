@@ -1,0 +1,16 @@
+include mixins/template.pug
+doctype html
+html
+	head
+		title pug
+		meta(charset="utf-8")
+		link(rel="stylesheet" href="css/main.css")
+	body
+		include blocks/header.pug
+		include blocks/main.pug
+		-const services = [{serviceImgPath: 'img/1.jpg', serivceName: 'Name1', serviceDescription:'Description1'}, {serviceImgPath: 'img/2.jpg', serivceName: 'Name2', serviceDescription:'Description2'}, {serviceImgPath: 'img/3.jpg', serivceName: 'Name3', serviceDescription:'Description3'}];
+		section#services
+			.container
+				.servicesWrap
+					+services(services)
+		include blocks/footer.pug

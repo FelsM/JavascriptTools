@@ -1,0 +1,57 @@
+doctype html
+html
+	head
+		title pug
+		meta(charset="utf-8")
+		link(rel="stylesheet" href="css/main.css")
+	body
+		- const message = 'Message for whole page';
+		- const users = [{name: 'User1', sname: 'User1'},{name: 'User2',sname: 'User2'},{name: 'User3', sname: 'User3'}];
+		//-a-//
+		h1#heading.head: a(href="https://pugjs.org/language/tags.html") Pug
+		div.block
+			div.block-item
+			div.block-item
+			div.block-item
+			div.block-item
+		p.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. #{message}
+		input(
+			type="text" 
+			value="1" 
+			name="firstName")
+		- const counter = 5;
+		h2 start loop
+		- for(let i = 0; i<users.length; i++){
+			h2 #{users[i].name}
+		-}
+		h2 End loop
+		- const age = 20;
+		case age
+			when 18 
+				p too young
+				-break
+			when 2
+				p too young
+				-break
+			default
+				p ok
+		if age < 18
+			h3 too young
+		else
+			h3 It is ok
+			p additional text
+		h2 ifelse end
+		//- 
+		mixin list
+			ul
+				li listitem
+		+list
+		mixin greet(message)
+			h1.heading= message
+		+greet('hello')
